@@ -3,6 +3,7 @@
 All booking confirmations are saved using clean, standardized nomenclature:
 
 ### Current Confirmed Files:
+* `tickets_red_sox_fenway_0901.png` — Seattle Mariners @ Boston Red Sox (Loge Box 149, Row NN, 2 Seats, $112 Total)
 * `flight_aa_ord_bos_0901.pdf` — Outbound AA Non-Rev Standby flight (Tue 9/1 @ 11:30 AM CDT)
 * `hotel_moxy_boston_conf_82416475.pdf` — Moxy Boston Downtown (Conf #82416475, Sept 1–3)
 * `hotel_aloft_portland_conf_0GEI3O4SRI.pdf` — Aloft Portland Waterfront (Conf #0GEI3O4SRI, Sept 3–5)
@@ -14,6 +15,7 @@ All booking confirmations are saved using clean, standardized nomenclature:
 * `dining_backup_legal_seafoods_harborside_boston.pdf` — Legal Harborside backup reservation (Wed 9/2)
 
 ### Standard Naming Scheme:
+* `tickets_<event>_<venue>_<date>.<ext>`
 * `flight_<airline>_<orig>_<dest>_<date>.pdf`
 * `hotel_<name>_<city>_conf_<id>.pdf`
 * `train_<name>_res_<id>.pdf`

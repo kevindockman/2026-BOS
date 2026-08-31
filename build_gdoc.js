@@ -62,10 +62,10 @@ const htmlContent = `<!DOCTYPE html>
         <td><strong>Conf #82416475</strong> ($660 Total)</td>
       </tr>
       <tr>
-        <td><strong>⚾ Red Sox Game @ Fenway Park</strong></td>
+        <td><strong>⚾ Seattle Mariners @ Boston Red Sox</strong></td>
         <td>Tue 9/1 @ 6:45 PM</td>
-        <td><span class="badge-booked">✅ TICKETS IN HAND</span></td>
-        <td>Confirmed Tickets for Kevin &amp; Alyssa</td>
+        <td><span class="badge-booked">✅ CONFIRMED</span></td>
+        <td><strong>Loge Box 149, Row NN</strong> (2 Seats • $112 Total)</td>
       </tr>
       <tr>
         <td><strong>🌅 Boston Harbor Sunset Cruise</strong></td>
@@ -255,6 +255,7 @@ const htmlContent = `<!DOCTYPE html>
     <tbody>
       <tr><td><strong>Boston Hotel (2 Nights @ Moxy)</strong></td><td>$660</td><td><span class="badge-booked">✅ CONF #82416475</span></td></tr>
       <tr><td><strong>Portland Hotel (2 Nights @ Aloft)</strong></td><td>$740</td><td><span class="badge-booked">✅ CONF #0GEI3O4SRI</span></td></tr>
+      <tr><td><strong>Red Sox vs. Mariners (Loge Box 149)</strong></td><td>$112</td><td><span class="badge-booked">✅ CONFIRMED</span></td></tr>
       <tr><td><strong>Harvey's Boarding (Western Wag - 4 Nights)</strong></td><td>$310</td><td><span class="badge-booked">✅ BOOKED</span></td></tr>
       <tr><td><strong>Amtrak Downeaster (1st Class Upgrade)</strong></td><td>$90</td><td><span class="badge-booked">✅ BOOKED</span></td></tr>
       <tr><td><strong>Boston Harbor Sunset Cruise</strong></td><td>~$70</td><td><span class="badge-booked">✅ BOOKING #33787328</span></td></tr>
@@ -263,7 +264,7 @@ const htmlContent = `<!DOCTYPE html>
       <tr><td><strong>Chicago &amp; Local Transit (Ubers + T)</strong></td><td>~$155</td><td><span class="badge-walkin">🚶 ON-DEMAND</span></td></tr>
       <tr><td><strong>Remaining Dining &amp; Lobster (Neptune, Row 34, Eventide)</strong></td><td>~$475</td><td><span class="badge-walkin">🚶 WALK-IN BAR / WAITLIST</span></td></tr>
       <tr><td><strong>Craft Beer &amp; Dive Bars</strong></td><td>~$415</td><td><span class="badge-walkin">🚶 WALK-IN</span></td></tr>
-      <tr class="summary-row"><td><strong>GRAND TOTAL TRIP ESTIMATE</strong></td><td><strong>~$3,075</strong></td><td><strong>All-inclusive 5-day vacation ledger under $3.1k!</strong></td></tr>
+      <tr class="summary-row"><td><strong>GRAND TOTAL TRIP ESTIMATE</strong></td><td><strong>~$3,187</strong></td><td><strong>All-inclusive 5-day vacation ledger under $3.2k!</strong></td></tr>
     </tbody>
   </table>
 
