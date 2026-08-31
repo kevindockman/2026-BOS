@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "docx": "^9.7.1",
-    "html-docx-js": "^0.3.1"
-  }
-}
