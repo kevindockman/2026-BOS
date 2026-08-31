@@ -271,5 +271,5 @@ const htmlContent = `<!DOCTYPE html>
 </html>
 `;
 
-fs.writeFileSync('/home/kevindockman/kdock/2026-09_triptik/Google_Docs_Formatted_Itinerary.html', htmlContent);
-console.log('Successfully updated HTML file with Sunset Cruise ID and Row 34 info!');
+fs.writeFileSync('/home/kevindockman/kdock/2026-BOS/Google_Docs_Formatted_Itinerary.html', htmlContent);
+console.log('Successfully updated HTML file with 2026-BOS path!');
