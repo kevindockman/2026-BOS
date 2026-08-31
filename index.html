@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dock & Babs' Boston & Portland Triptik 🍻🦞⚾✈️🐶</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#1a73e8',
+              navy: '#0f2b48',
+              accent: '#f59e0b',
+              lobster: '#e11d48',
+              dark: '#111827',
+              card: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Smooth scrolling and native touch feel */
+    html { -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .tab-active { color: #3b82f6; border-bottom: 3px solid #3b82f6; font-weight: 700; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 pb-24 antialiased min-h-screen">
+
+  <!-- Top Hero Bar -->
+  <header class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 border-b border-slate-800 sticky top-0 z-40 px-4 py-3 shadow-lg">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <div>
+        <div class="flex items-center space-x-2">
+          <span class="text-xl">🍻🦞⚾✈️🐶</span>
+          <h1 class="text-lg md:text-xl font-bold bg-gradient-to-r from-amber-400 via-rose-300 to-blue-400 bg-clip-text text-transparent">
+            Dock &amp; Babs' Triptik
+          </h1>
+        </div>
+        <p class="text-xs text-slate-400">Sept 1–5, 2026 • Boston &amp; Portland, ME</p>
+      </div>
+      <div class="flex items-center space-x-2">
+        <a href="#confirmations" onclick="switchTab('confirmations')" class="bg-emerald-600/30 border border-emerald-500/50 text-emerald-300 text-xs px-2.5 py-1 rounded-full flex items-center space-x-1 font-medium">
+          <i class="fa-solid fa-ticket"></i>
+          <span>Bookings</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Mobile Navigation Tabs -->
+  <nav class="bg-slate-900/95 backdrop-blur border-b border-slate-800 sticky top-[57px] z-30 px-2 shadow-md overflow-x-auto no-scrollbar">
+    <div class="max-w-4xl mx-auto flex space-x-1 sm:space-x-4 min-w-max text-xs sm:text-sm font-medium">
+      <button onclick="switchTab('itinerary')" id="tab-btn-itinerary" class="py-2.5 px-3 transition-colors flex items-center space-x-1.5 tab-active">
+        <i class="fa-solid fa-calendar-day"></i>
+        <span>Itinerary</span>
+      </button>
+      <button onclick="switchTab('menus')" id="tab-btn-menus" class="py-2.5 px-3 text-slate-400 hover:text-slate-200 transition-colors flex items-center space-x-1.5">
+        <i class="fa-solid fa-utensils text-rose-400"></i>
+        <span>Babs' Menus</span>
+      </button>
+      <button onclick="switchTab('confirmations')" id="tab-btn-confirmations" class="py-2.5 px-3 text-slate-400 hover:text-slate-200 transition-colors flex items-center space-x-1.5">
+        <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+        <span>Reservations</span>
+      </button>
+      <button onclick="switchTab('memories')" id="tab-btn-memories" class="py-2.5 px-3 text-slate-400 hover:text-slate-200 transition-colors flex items-center space-x-1.5">
+        <i class="fa-solid fa-camera-retro text-amber-400"></i>
+        <span>Photo Booklet</span>
+      </button>
+      <button onclick="switchTab('budget')" id="tab-btn-budget" class="py-2.5 px-3 text-slate-400 hover:text-slate-200 transition-colors flex items-center space-x-1.5">
+        <i class="fa-solid fa-wallet text-purple-400"></i>
+        <span>Budget</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="max-w-4xl mx-auto px-4 pt-4">
+
+    <!-- ==================== TAB 1: ITINERARY ==================== -->
+    <section id="tab-itinerary" class="space-y-4">
+
+      <!-- Quick Route Overview Card -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4 shadow-sm">
+        <h2 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center">
+          <i class="fa-solid fa-route mr-2"></i>Trip At A Glance
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+          <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+            <span class="text-slate-400 block">Tue 9/1</span>
+            <strong class="text-slate-200">ORD ➔ Fenway ⚾</strong>
+          </div>
+          <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+            <span class="text-slate-400 block">Wed 9/2</span>
+            <strong class="text-slate-200">Sunset Cruise 🌅</strong>
+          </div>
+          <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+            <span class="text-slate-400 block">Thu 9/3</span>
+            <strong class="text-slate-200">Amtrak ➔ Portland 🚆</strong>
+          </div>
+          <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-700/50">
+            <span class="text-slate-400 block">Fri 9/4</span>
+            <strong class="text-slate-200">Street &amp; Co. 🦞</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 1 -->
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl overflow-hidden shadow-md">
+        <div class="bg-gradient-to-r from-blue-900/80 to-slate-800 p-3.5 border-b border-slate-700 flex justify-between items-center">
+          <div>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/40">DAY 1</span>
+            <h3 class="font-bold text-base text-slate-100 mt-1">Tuesday, Sept 1 • Harvey Drop &amp; Red Sox Game!</h3>
+          </div>
+          <span class="text-xs bg-slate-900/80 px-2 py-1 rounded text-slate-300">Boston, MA</span>
+        </div>
+        <div class="divide-y divide-slate-700/60 text-sm">
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">7:00 AM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-200">🐶 Drop Harvey at Western Wag</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Booked</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">Drop off Harvey right at 7:00 AM opening for his 4-night stay ($310 total).</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">8:30 AM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Transit to O'Hare (ORD)</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Uber from home / Western Ave to ORD Terminal 3.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">11:30 AM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-200">✈️ AA Flight ORD ➔ BOS</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Confirmed</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">American Airlines Non-Rev Standby ($0). Lands at BOS at 2:50 PM EDT (+1 hr time shift).</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">3:45 PM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-200">🏨 Check into Moxy Boston Downtown</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Conf #82416475</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">Check in at 24/7 lobby bar, get welcome cocktail, unpack, and gear up in Sox colors!</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">5:15 PM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Fenway Pre-Game: Bleacher Bar &amp; Trillium</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Green Line T from Boylston to Kenmore. Bleacher Bar (look right onto center field!) &amp; Trillium Fenway IPAs.</p>
+              <div class="mt-2 flex space-x-2">
+                <a href="https://www.bleacherbarboston.com/menus/" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-2 py-1 rounded inline-flex items-center space-x-1">
+                  <i class="fa-solid fa-book-open"></i><span>Bleacher Bar Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3 bg-rose-950/20">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">6:45 PM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-rose-300">⚾ RED SOX GAME @ FENWAY PARK!</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Tickets in Hand</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-0.5">Green Monster views, Fenway Franks, craft beer, and <em>Sweet Caroline</em> in the 8th inning!</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">9:45 PM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Post-Game Dives: Cask 'n Flagon &amp; The Tam</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Post-game pint on Lansdowne St or ride T back to Theater District for a nightcap at The Tam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl overflow-hidden shadow-md">
+        <div class="bg-gradient-to-r from-blue-900/80 to-slate-800 p-3.5 border-b border-slate-700 flex justify-between items-center">
+          <div>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/40">DAY 2</span>
+            <h3 class="font-bold text-base text-slate-100 mt-1">Wednesday, Sept 2 • Freedom Trail, Sunset Cruise &amp; Seafood</h3>
+          </div>
+          <span class="text-xs bg-slate-900/80 px-2 py-1 rounded text-slate-300">Boston, MA</span>
+        </div>
+        <div class="divide-y divide-slate-700/60 text-sm">
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">8:30 AM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Thinking Cup Coffee &amp; Beacon Hill Walk</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Pour-overs at Thinking Cup (Tremont St). Stroll Public Garden &amp; Acorn Street.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">9:45 AM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Freedom Trail &amp; North End</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Follow the red brick trail past State House, Granary Burying Ground &amp; Faneuil Hall.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">12:00 PM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">North End Lobster Lunch: Neptune Oyster</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Famous hot buttered lobster roll or James Hook &amp; Co. picnic.</p>
+              <div class="mt-2 flex space-x-2">
+                <a href="https://www.neptuneoyster.com/menu" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-2 py-1 rounded inline-flex items-center space-x-1">
+                  <i class="fa-solid fa-book-open"></i><span>Neptune Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">2:00 PM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Seaport Brewery Hop: Trillium &amp; Harpoon</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Trillium Fort Point roof deck IPAs &amp; Harpoon Beer Hall fresh handmade pretzels.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3 bg-amber-950/20">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">6:00 PM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-amber-300">🌅 BOSTON HARBOR SUNSET CRUISE</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Booking #33787328</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-0.5">Board at Long Wharf. Narrated sunset cruise with drinks on deck during 7:18 PM sunset!</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">8:00 PM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-200">🍽️ Dinner at Row 34 (383 Congress St)</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-blue-950 text-blue-300 border border-blue-700/50 rounded">Walk-in Bar / Resy</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">Full menu at extensive walk-in oyster bar! (Confirmed backups: Woods Hill Pier 4 / Legal Harborside).</p>
+              <div class="mt-2 flex space-x-2">
+                <a href="https://www.row34.com/boston-menus/" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-2 py-1 rounded inline-flex items-center space-x-1">
+                  <i class="fa-solid fa-book-open"></i><span>Row 34 Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl overflow-hidden shadow-md">
+        <div class="bg-gradient-to-r from-blue-900/80 to-slate-800 p-3.5 border-b border-slate-700 flex justify-between items-center">
+          <div>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/40">DAY 3</span>
+            <h3 class="font-bold text-base text-slate-100 mt-1">Thursday, Sept 3 • Amtrak Downeaster &amp; Portland Old Port</h3>
+          </div>
+          <span class="text-xs bg-slate-900/80 px-2 py-1 rounded text-slate-300">Boston ➔ Portland, ME</span>
+        </div>
+        <div class="divide-y divide-slate-700/60 text-sm">
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">10:00 AM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Checkout Moxy &amp; Boston Public Market Treats</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Grab George Howell pour-overs &amp; Union Square Donuts for the train.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3 bg-blue-950/20">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">11:50 AM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-blue-300">🚆 AMTRAK DOWNEASTER #685 (1st Class)</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Booked ($90)</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-0.5">Scenic coastal train ride from Boston North Station (BOS) ➔ Portland (POR) arriving 2:20 PM.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">2:20 PM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-200">🏨 Check into Aloft Portland Waterfront</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Conf #0GEI3O4SRI</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">Commercial Street right on the waterfront. Drop bags &amp; walk to Old Port piers.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">2:50 PM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Portland Lobster Co. Waterfront Lunch</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Pier deck over Casco Bay, live music, fresh steamed lobster &amp; local draft beers.</p>
+              <div class="mt-2 flex space-x-2">
+                <a href="https://www.portlandlobstercompany.com/menu" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-2 py-1 rounded inline-flex items-center space-x-1">
+                  <i class="fa-solid fa-book-open"></i><span>PLC Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">4:15 PM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">East Bayside Brewery Tour ("Yeast Bayside")</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Hop between Rising Tide, Austin Street Brewery (Fox St) &amp; Belleflower.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">6:30 PM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-200">Dinner at Eventide Oyster Co.</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-blue-950 text-blue-300 border border-blue-700/50 rounded">Digital Waitlist</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">Famous brown butter lobster roll on steamed bao bun &amp; raw oyster flights.</p>
+              <div class="mt-2 flex space-x-2">
+                <a href="https://www.eventideoysterco.com/menu" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-2 py-1 rounded inline-flex items-center space-x-1">
+                  <i class="fa-solid fa-book-open"></i><span>Eventide Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl overflow-hidden shadow-md">
+        <div class="bg-gradient-to-r from-blue-900/80 to-slate-800 p-3.5 border-b border-slate-700 flex justify-between items-center">
+          <div>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/40">DAY 4</span>
+            <h3 class="font-bold text-base text-slate-100 mt-1">Friday, Sept 4 • Lighthouse Hike, Breweries &amp; Street &amp; Co.</h3>
+          </div>
+          <span class="text-xs bg-slate-900/80 px-2 py-1 rounded text-slate-300">Portland, ME</span>
+        </div>
+        <div class="divide-y divide-slate-700/60 text-sm">
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">8:30 AM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Tandem Coffee &amp; Bakery Morning</strong>
+              <p class="text-xs text-slate-400 mt-0.5">West End pour-overs &amp; famous savory breakfast biscuits.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">9:30 AM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Portland Head Light Coastal Hike</strong>
+              <p class="text-xs text-slate-400 mt-0.5">10-min Uber to Fort Williams Park trails &amp; Bite Into Maine food truck on-site.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">12:30 PM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Industrial Way Brewery Pilgrimage</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Allagash Brewing, Foundation, Definitive &amp; Bissell Brothers.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3 bg-rose-950/20">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">5:00 PM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-rose-300">🍽️ GRAND FINALE: Street &amp; Co. (33 Wharf St)</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Conf 5:00 PM</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-0.5">Lobster Fra Diavolo in sizzling copper skillet, whole grilled fish &amp; roasted mussels!</p>
+              <div class="mt-2 flex space-x-2">
+                <a href="https://www.streetandcompany.net/menu" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-2 py-1 rounded inline-flex items-center space-x-1">
+                  <i class="fa-solid fa-book-open"></i><span>Street &amp; Co. Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">7:30 PM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Old Port &amp; West End Dive Bar Crawl</strong>
+              <p class="text-xs text-slate-400 mt-0.5">Lincoln’s ($5 hidden speakeasy), Bramhall candlelit dive, or J's Oyster on the pier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl overflow-hidden shadow-md">
+        <div class="bg-gradient-to-r from-blue-900/80 to-slate-800 p-3.5 border-b border-slate-700 flex justify-between items-center">
+          <div>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/40">DAY 5</span>
+            <h3 class="font-bold text-base text-slate-100 mt-1">Saturday, Sept 5 • Nonstop Flight PWM ➔ ORD &amp; Harvey Pick Up</h3>
+          </div>
+          <span class="text-xs bg-slate-900/80 px-2 py-1 rounded text-slate-300">PWM ➔ ORD ➔ Home</span>
+        </div>
+        <div class="divide-y divide-slate-700/60 text-sm">
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">5:30 AM</div>
+            <div class="flex-1">
+              <strong class="text-slate-200">Checkout Aloft &amp; Transit to PWM</strong>
+              <p class="text-xs text-slate-400 mt-0.5">10-min Uber to Portland International Jetport (PWM).</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">7:30 AM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-200">✈️ AA Nonstop Flight PWM ➔ ORD</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Confirmed</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">American Airlines Non-Rev Standby ($0). Arrives ORD ~9:15 AM CDT.</p>
+            </div>
+          </div>
+          <div class="p-3.5 flex items-start space-x-3 bg-emerald-950/20">
+            <div class="w-16 font-mono text-xs text-amber-400 shrink-0 pt-0.5">10:00 AM</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-emerald-300">🐶 Pick Up Harvey @ Western Wag!</strong>
+                <span class="text-xs px-1.5 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded">Reunited</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-0.5">Reunite with Harvey and head home with a full holiday weekend ahead!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 2: BABS' MENUS ==================== -->
+    <section id="tab-menus" class="hidden space-y-4">
+      <div class="bg-gradient-to-r from-rose-900/50 to-slate-800 border border-rose-700/40 rounded-xl p-4">
+        <h2 class="text-base font-bold text-rose-300 flex items-center">
+          <i class="fa-solid fa-utensils mr-2"></i>Babs' Curated Menu Vault 🦞📖
+        </h2>
+        <p class="text-xs text-slate-300 mt-1">Direct official menu links for every dining, seafood &amp; brewery stop on the trip!</p>
+      </div>
+
+      <!-- Boston Spots -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-blue-400 uppercase tracking-wider px-1">📍 Boston Dining &amp; Drinks</h3>
+
+        <!-- Row 34 -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-slate-100">Row 34 (Fort Point / Seaport)</h4>
+              <p class="text-xs text-slate-400">383 Congress St • Premier raw bar &amp; craft beers</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-blue-900/50 text-blue-300 border border-blue-700/50">Wed Dinner</span>
+          </div>
+          <p class="text-xs text-slate-300 mt-2"><strong>Babs' Highlights:</strong> Warm buttered lobster rolls, oyster flights, crudo, smoked trout toast, and extensive curated New England draft list.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.row34.com/boston-menus/" target="_blank" class="text-xs bg-blue-600 hover:bg-blue-500 text-white font-medium px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Official Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Woods Hill Pier 4 -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-slate-100">Woods Hill Pier 4 (Confirmed Backup)</h4>
+              <p class="text-xs text-slate-400">300 Pier 4 Blvd • Waterfront farm-to-table seafood</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-emerald-900/50 text-emerald-300 border border-emerald-700/50">Wed Backup</span>
+          </div>
+          <p class="text-xs text-slate-300 mt-2"><strong>Highlights:</strong> Lobster popovers, grass-fed beef tartare, whole grilled black sea bass, and harbor views.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.woodshillpier4.com/menus/" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Neptune Oyster -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-slate-100">Neptune Oyster (North End)</h4>
+              <p class="text-xs text-slate-400">63 Salem St • Legendary historic raw bar</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-700 text-slate-300">Wed Lunch</span>
+          </div>
+          <p class="text-xs text-slate-300 mt-2"><strong>Highlights:</strong> Warm buttered lobster roll on toasted brioche, fried Ipswich clams, sea urchin, and fresh Wellfleet oysters.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.neptuneoyster.com/menu" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bleacher Bar & Trillium Fenway -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-slate-100">Bleacher Bar &amp; Trillium Fenway</h4>
+              <p class="text-xs text-slate-400">Lansdowne St • Centerfield window &amp; hazy IPAs</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-900/50 text-rose-300 border border-rose-700/50">Tue Pre-Game</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.bleacherbarboston.com/menus/" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>Bleacher Bar Menu</span>
+            </a>
+            <a href="https://trilliumbrewing.com/pages/fenway-on-tap" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>Trillium Draft List</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portland Spots -->
+      <div class="space-y-3 pt-2">
+        <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider px-1">📍 Portland, ME Dining &amp; Breweries</h3>
+
+        <!-- Street & Co. -->
+        <div class="bg-slate-800/90 border border-rose-600/50 rounded-xl p-4 shadow-md">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-rose-300 text-base">Street &amp; Co. (33 Wharf St)</h4>
+              <p class="text-xs text-slate-400">Cobblestone Wharf St • Scales/Fore St team</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-emerald-900/60 text-emerald-300 border border-emerald-600/50 font-bold">Fri 5:00 PM Booked</span>
+          </div>
+          <p class="text-xs text-slate-200 mt-2"><strong>Must-Orders:</strong> Lobster Fra Diavolo over linguini in hot copper skillet, Whole Grilled Fish of the Day, Wood-Roasted Mussels in white wine &amp; garlic, grilled calamari over greens.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.streetandcompany.net/menu" target="_blank" class="text-xs bg-rose-600 hover:bg-rose-500 text-white font-semibold px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Street &amp; Co. Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Eventide Oyster Co. -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-slate-100">Eventide Oyster Co. (Middle St)</h4>
+              <p class="text-xs text-slate-400">86 Middle St • Modern oyster mecca</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-blue-900/50 text-blue-300 border border-blue-700/50">Thu Dinner</span>
+          </div>
+          <p class="text-xs text-slate-300 mt-2"><strong>Highlights:</strong> World-famous brown butter lobster roll on steamed bao bun, lobster stew with green curry, oyster flights with kimchi ice &amp; horseradish ice.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.eventideoysterco.com/menu" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Eventide Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Portland Lobster Co. -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-slate-100">Portland Lobster Co. (Commercial St)</h4>
+              <p class="text-xs text-slate-400">180 Commercial St • Pier deck &amp; live music</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-700 text-slate-300">Thu Lunch</span>
+          </div>
+          <p class="text-xs text-slate-300 mt-2"><strong>Highlights:</strong> Whole steamed Maine lobsters, clam chowder in bread bowls, fried clam strips, and local Maine beers on draft right over the water.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.portlandlobstercompany.com/menu" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View PLC Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bite Into Maine (Lighthouse) -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-slate-100">Bite Into Maine (Fort Williams Park)</h4>
+              <p class="text-xs text-slate-400">Cape Elizabeth • Ocean cliffside food truck</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-700 text-slate-300">Fri Hike Lunch</span>
+          </div>
+          <p class="text-xs text-slate-300 mt-2"><strong>Highlights:</strong> Lobster roll flights (Maine style, Connecticut warm butter, Curry, Wasabi, Chipotle), and whoopie pies.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.biteintomaine.com/menu" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Allagash & Bissell Brothers -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-bold text-slate-100">Breweries: Allagash &amp; Bissell Brothers</h4>
+              <p class="text-xs text-slate-400">Industrial Way &amp; Thompson's Point</p>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-amber-900/50 text-amber-300 border border-amber-700/50">Fri Breweries</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href="https://www.allagash.com/visit/tasting-room/" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>Allagash Taproom</span>
+            </a>
+            <a href="https://bissellbrothers.com/location/portland-taproom/" target="_blank" class="text-xs bg-slate-700 hover:bg-slate-600 text-blue-300 px-3 py-1.5 rounded-lg inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i><span>Bissell Taproom</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: CONFIRMATIONS & BOOKINGS ==================== -->
+    <section id="tab-confirmations" class="hidden space-y-4">
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+        <h2 class="text-base font-bold text-emerald-400 flex items-center">
+          <i class="fa-solid fa-shield-halved mr-2"></i>Confirmed Booking Vault
+        </h2>
+        <p class="text-xs text-slate-400 mt-1">All reservation codes, ticket IDs, and hotel records in one place.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+
+        <!-- Moxy Boston -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-blue-400 uppercase">🏨 Hotel Boston</span>
+            <span class="text-xs px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded font-semibold">Booked</span>
+          </div>
+          <h4 class="font-bold text-slate-100 mt-1">Moxy Boston Downtown</h4>
+          <div class="mt-2 text-xs space-y-1 text-slate-300">
+            <p><strong>Confirmation:</strong> <span class="font-mono bg-slate-900 px-1.5 py-0.5 rounded text-amber-300 font-bold">#82416475</span></p>
+            <p><strong>Dates:</strong> Sept 1 – 3, 2026 (2 Nights)</p>
+            <p><strong>Total Cost:</strong> $660 Confirmed</p>
+            <p><strong>Address:</strong> 240 Tremont St, Boston, MA</p>
+          </div>
+        </div>
+
+        <!-- Aloft Portland -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-amber-400 uppercase">🏨 Hotel Portland</span>
+            <span class="text-xs px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded font-semibold">Booked</span>
+          </div>
+          <h4 class="font-bold text-slate-100 mt-1">Aloft Portland Waterfront</h4>
+          <div class="mt-2 text-xs space-y-1 text-slate-300">
+            <p><strong>Confirmation:</strong> <span class="font-mono bg-slate-900 px-1.5 py-0.5 rounded text-amber-300 font-bold">#0GEI3O4SRI</span></p>
+            <p><strong>Dates:</strong> Sept 3 – 5, 2026 (2 Nights)</p>
+            <p><strong>Total Cost:</strong> $740 Confirmed</p>
+            <p><strong>Address:</strong> 379 Commercial St, Portland, ME</p>
+          </div>
+        </div>
+
+        <!-- Sunset Cruise -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-rose-400 uppercase">🌅 Sunset Cruise</span>
+            <span class="text-xs px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded font-semibold">Booked</span>
+          </div>
+          <h4 class="font-bold text-slate-100 mt-1">Boston Harbor Sunset Cruise</h4>
+          <div class="mt-2 text-xs space-y-1 text-slate-300">
+            <p><strong>Booking ID:</strong> <span class="font-mono bg-slate-900 px-1.5 py-0.5 rounded text-amber-300 font-bold">#33787328</span></p>
+            <p><strong>Time:</strong> Wed 9/2 @ 6:00 PM – 7:45 PM</p>
+            <p><strong>Departure:</strong> Long Wharf / Boston Harbor</p>
+          </div>
+        </div>
+
+        <!-- Street & Co -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-emerald-400 uppercase">🍽️ Grand Finale Dinner</span>
+            <span class="text-xs px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded font-semibold">Confirmed</span>
+          </div>
+          <h4 class="font-bold text-slate-100 mt-1">Street &amp; Co. (Portland)</h4>
+          <div class="mt-2 text-xs space-y-1 text-slate-300">
+            <p><strong>Reservation Time:</strong> <span class="font-mono bg-slate-900 px-1.5 py-0.5 rounded text-emerald-300 font-bold">Fri Sept 4 @ 5:00 PM</span></p>
+            <p><strong>Address:</strong> 33 Wharf St, Portland, ME</p>
+            <p><strong>Party:</strong> 2 Guests (Dock &amp; Babs)</p>
+          </div>
+        </div>
+
+        <!-- Amtrak Downeaster -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-blue-400 uppercase">🚆 Amtrak Train</span>
+            <span class="text-xs px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded font-semibold">Booked</span>
+          </div>
+          <h4 class="font-bold text-slate-100 mt-1">Downeaster #685 (1st Class)</h4>
+          <div class="mt-2 text-xs space-y-1 text-slate-300">
+            <p><strong>Date &amp; Time:</strong> Thu Sept 3 @ 11:50 AM</p>
+            <p><strong>Route:</strong> Boston North (BON) ➔ Portland (POR)</p>
+            <p><strong>Cost:</strong> $90 Total ($45/ea with 1st Class upgrade)</p>
+          </div>
+        </div>
+
+        <!-- Western Wag -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-amber-400 uppercase">🐶 Dog Boarding</span>
+            <span class="text-xs px-2 py-0.5 bg-emerald-950 text-emerald-300 border border-emerald-700/50 rounded font-semibold">Booked</span>
+          </div>
+          <h4 class="font-bold text-slate-100 mt-1">Harvey @ Western Wag</h4>
+          <div class="mt-2 text-xs space-y-1 text-slate-300">
+            <p><strong>Drop-off:</strong> Tue Sept 1 @ 7:00 AM</p>
+            <p><strong>Pick-up:</strong> Sat Sept 5 @ ~10:00 AM</p>
+            <p><strong>Total Cost:</strong> $310 (3 nts @ $75 + 1 hol @ $85)</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: PHOTO BOOKLET & MEMORIES ==================== -->
+    <section id="tab-memories" class="hidden space-y-4">
+      <div class="bg-gradient-to-r from-amber-900/40 via-slate-800 to-slate-900 border border-amber-600/40 rounded-xl p-4">
+        <h2 class="text-base font-bold text-amber-300 flex items-center">
+          <i class="fa-solid fa-camera-retro mr-2"></i>Trip Memories &amp; Photo Booklet 📸
+        </h2>
+        <p class="text-xs text-slate-300 mt-1">Capture and view your favorite moments from Boston, Fenway, Amtrak, and Portland! Drop trip photos into the <code class="bg-slate-900 px-1 py-0.5 rounded text-amber-300">photos/</code> folder to build your lifetime memory booklet.</p>
+      </div>
+
+      <!-- Memory Highlight Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center text-center h-36 border-dashed border-slate-600 hover:border-amber-400 transition-colors cursor-pointer">
+          <i class="fa-solid fa-baseball text-2xl text-rose-400 mb-2"></i>
+          <span class="text-xs font-bold text-slate-200">Fenway Park ⚾</span>
+          <span class="text-[10px] text-slate-400 mt-1">Bleacher Bar &amp; Monster</span>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center text-center h-36 border-dashed border-slate-600 hover:border-amber-400 transition-colors cursor-pointer">
+          <i class="fa-solid fa-ship text-2xl text-blue-400 mb-2"></i>
+          <span class="text-xs font-bold text-slate-200">Sunset Cruise 🌅</span>
+          <span class="text-[10px] text-slate-400 mt-1">Harbor &amp; Skyline</span>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center text-center h-36 border-dashed border-slate-600 hover:border-amber-400 transition-colors cursor-pointer">
+          <i class="fa-solid fa-train text-2xl text-emerald-400 mb-2"></i>
+          <span class="text-xs font-bold text-slate-200">Amtrak Downeaster 🚆</span>
+          <span class="text-[10px] text-slate-400 mt-1">Coastal Maine Views</span>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center text-center h-36 border-dashed border-slate-600 hover:border-amber-400 transition-colors cursor-pointer">
+          <i class="fa-solid fa-landmark-dome text-2xl text-amber-400 mb-2"></i>
+          <span class="text-xs font-bold text-slate-200">Portland Head Light ⚓</span>
+          <span class="text-[10px] text-slate-400 mt-1">Cliff Trails &amp; Waves</span>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center text-center h-36 border-dashed border-slate-600 hover:border-amber-400 transition-colors cursor-pointer">
+          <i class="fa-solid fa-beer-mug-empty text-2xl text-yellow-400 mb-2"></i>
+          <span class="text-xs font-bold text-slate-200">Craft Breweries 🍻</span>
+          <span class="text-[10px] text-slate-400 mt-1">Allagash &amp; Trillium</span>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center text-center h-36 border-dashed border-slate-600 hover:border-amber-400 transition-colors cursor-pointer">
+          <i class="fa-solid fa-shrimp text-2xl text-rose-400 mb-2"></i>
+          <span class="text-xs font-bold text-slate-200">Street &amp; Co. 🦞</span>
+          <span class="text-[10px] text-slate-400 mt-1">Wharf St Grand Finale</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: BUDGET ==================== -->
+    <section id="tab-budget" class="hidden space-y-4">
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4">
+        <h2 class="text-base font-bold text-purple-300 flex items-center">
+          <i class="fa-solid fa-wallet mr-2"></i>Master Trip Budget &amp; Ledger
+        </h2>
+        <p class="text-xs text-slate-400 mt-1">Complete all-inclusive 5-day vacation ledger for Dock &amp; Babs + Harvey.</p>
+      </div>
+
+      <div class="bg-slate-800/90 border border-slate-700 rounded-xl overflow-hidden shadow-md">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-900/80 text-slate-300 border-b border-slate-700 font-semibold">
+            <tr>
+              <th class="p-3">Category</th>
+              <th class="p-3 text-right">Cost</th>
+              <th class="p-3 text-right">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-700/50">
+            <tr><td class="p-3">Boston Hotel (Moxy - 2 Nts)</td><td class="p-3 text-right font-mono font-bold">$660</td><td class="p-3 text-right text-emerald-400 font-semibold">✅ Booked</td></tr>
+            <tr><td class="p-3">Portland Hotel (Aloft - 2 Nts)</td><td class="p-3 text-right font-mono font-bold">$740</td><td class="p-3 text-right text-emerald-400 font-semibold">✅ Booked</td></tr>
+            <tr><td class="p-3">Harvey Boarding (Western Wag)</td><td class="p-3 text-right font-mono font-bold">$310</td><td class="p-3 text-right text-emerald-400 font-semibold">✅ Booked</td></tr>
+            <tr><td class="p-3">Amtrak Downeaster (1st Class)</td><td class="p-3 text-right font-mono font-bold">$90</td><td class="p-3 text-right text-emerald-400 font-semibold">✅ Booked</td></tr>
+            <tr><td class="p-3">Boston Sunset Cruise</td><td class="p-3 text-right font-mono font-bold">~$70</td><td class="p-3 text-right text-emerald-400 font-semibold">✅ Booked</td></tr>
+            <tr><td class="p-3">Street &amp; Co. Friday Dinner</td><td class="p-3 text-right font-mono font-bold">~$160</td><td class="p-3 text-right text-emerald-400 font-semibold">✅ Confirmed</td></tr>
+            <tr><td class="p-3">Flights (AA Non-Rev Standby)</td><td class="p-3 text-right font-mono font-bold">$0</td><td class="p-3 text-right text-emerald-400 font-semibold">✅ Free ($0)</td></tr>
+            <tr><td class="p-3">Chicago &amp; Local Transit (Ubers/T)</td><td class="p-3 text-right font-mono font-bold">~$155</td><td class="p-3 text-right text-blue-400">🚶 On-Demand</td></tr>
+            <tr><td class="p-3">Dining &amp; Lobster Rolls</td><td class="p-3 text-right font-mono font-bold">~$475</td><td class="p-3 text-right text-amber-400">⏳ Resy / Walk-In</td></tr>
+            <tr><td class="p-3">Craft Beer &amp; Dives</td><td class="p-3 text-right font-mono font-bold">~$415</td><td class="p-3 text-right text-blue-400">🚶 Walk-In</td></tr>
+            <tr class="bg-purple-950/40 font-bold text-purple-200">
+              <td class="p-3">GRAND TOTAL ESTIMATE</td>
+              <td class="p-3 text-right font-mono text-base text-amber-300">~$3,075</td>
+              <td class="p-3 text-right text-emerald-300">All-Inclusive</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive JavaScript for Tab Switching -->
+  <script>
+    function switchTab(tabId) {
+      const tabs = ['itinerary', 'menus', 'confirmations', 'memories', 'budget'];
+      tabs.forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === tabId) {
+          el.classList.remove('hidden');
+          btn.classList.add('tab-active');
+          btn.classList.remove('text-slate-400');
+        } else {
+          el.classList.add('hidden');
+          btn.classList.remove('tab-active');
+          btn.classList.add('text-slate-400');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
