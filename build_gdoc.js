@@ -271,5 +271,5 @@ const htmlContent = `<!DOCTYPE html>
 </html>
 `;
 
-fs.writeFileSync('/home/kevindockman/kdock/2026-BOS/Google_Docs_Formatted_Itinerary.html', htmlContent);
-console.log('Successfully updated HTML file with 2026-BOS path!');
+fs.writeFileSync('/home/kevindockman/kdock/2026-BOS/Itinerary.html', htmlContent);
+console.log('Successfully updated Itinerary.html in 2026-BOS!');
