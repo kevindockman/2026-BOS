@@ -969,10 +969,12 @@
       if (map) return;
       map = L.map('map-container').setView([42.358, -71.06], 13);
       
-      // Sleek Dark Matter / CartoDB Tile Layer for modern clean aesthetic
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        maxZoom: 19
+      // High-Definition CARTO Voyager Basemap with API Key
+      const cartoApiKey = 'cb1_2ltx_1_a04ad864f78949064b06a80b';
+      L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?api_key=${cartoApiKey}`, {
+        attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19,
+        subdomains: 'abcd'
       }).addTo(map);
 
       markersLayer = L.layerGroup().addTo(map);
