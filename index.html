@@ -1020,21 +1020,29 @@
       }
     }
 
-    function switchTab(tabId) {
+    function switchTab(tabId, updateHash = true) {
       const tabs = ['itinerary', 'map', 'menus', 'confirmations', 'memories', 'budget'];
+      if (!tabs.includes(tabId)) tabId = 'itinerary';
+
       tabs.forEach(t => {
         const el = document.getElementById('tab-' + t);
         const btn = document.getElementById('tab-btn-' + t);
-        if (t === tabId) {
-          el.classList.remove('hidden');
-          btn.classList.add('tab-active');
-          btn.classList.remove('text-slate-400');
-        } else {
-          el.classList.add('hidden');
-          btn.classList.remove('tab-active');
-          btn.classList.add('text-slate-400');
+        if (el && btn) {
+          if (t === tabId) {
+            el.classList.remove('hidden');
+            btn.classList.add('tab-active');
+            btn.classList.remove('text-slate-400');
+          } else {
+            el.classList.add('hidden');
+            btn.classList.remove('tab-active');
+            btn.classList.add('text-slate-400');
+          }
         }
       });
+
+      if (updateHash && window.location.hash !== '#' + tabId) {
+        history.replaceState(null, null, '#' + tabId);
+      }
 
       if (tabId === 'map') {
         setTimeout(() => {
@@ -1045,6 +1053,19 @@
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    function handleHashChange() {
+      const hash = window.location.hash.replace('#', '');
+      const validTabs = ['itinerary', 'map', 'menus', 'confirmations', 'memories', 'budget'];
+      if (validTabs.includes(hash)) {
+        switchTab(hash, false);
+      } else {
+        switchTab('itinerary', false);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', handleHashChange);
+    window.addEventListener('hashchange', handleHashChange);
   </script>
 </body>
 </html>
