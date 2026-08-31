@@ -65,7 +65,7 @@ const htmlContent = `<!DOCTYPE html>
         <td><strong>⚾ Seattle Mariners @ Boston Red Sox</strong></td>
         <td>Tue 9/1 @ 6:45 PM</td>
         <td><span class="badge-booked">✅ CONFIRMED</span></td>
-        <td><strong>Loge Box 149, Row NN</strong> (2 Seats • $112 Total)</td>
+        <td><strong>Gametime #XG98BRVQ29</strong> • Loge Box 149, Row NN ($112 Total)</td>
       </tr>
       <tr>
         <td><strong>🌅 Boston Harbor Sunset Cruise</strong></td>
